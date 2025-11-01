@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BekBOOk</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <!-- Font Awesome – ikonka uchun -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <script src="../js/script.js" defer></script>
+    <link rel="icon" href="https://i.postimg.cc/1tCrm6J9/Copilot-20250929-174346.png" type="image/x-icon" />
+</head>
+
+<body>
+    <!-- ====================== HEADER ====================== -->
+    <header class="topbar">
+        <div class="container">
+            <div class="topbar__inner">
+                <!-- LOGO – Bosh sahifa / Tepaga scroll -->
+                <a href="javascript:void(0)" class="logo scroll-to-top">
+                    <img src="https://i.postimg.cc/9FR7nFyL/Copilot-20250821-185359.png" alt="logo" class="logo-dark" />
+                    <img src="https://i.postimg.cc/vZq5QFVD/image.png" alt="logo" class="logo-light" />
+                    BekBOOK
+                </a>
+                
+                <!-- QIDIRUV MAYDONI -->
+                <div class="search">
+                    <input type="text" id="searchInput" placeholder="Kitob, muallif yoki janrni qidirish..." />
+                </div>
+                
+                <!-- TUGMALAR: Tema, Savat -->
+                <div class="actions">
+                    <button id="theme-toggle" class="action">
+                        <i class="fa-solid fa-sun"></i> <i class="fa-solid fa-moon"></i>
+                    </button>
+                    <button id="cart-btn" class="action" data-modal-target="#cart-modal">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span id="cart-count" class="cart-count">0</span>
+                    </button>
+                </div>
+                
+                <!-- KIRISH / RO‘YXATDAN O‘TISH -->
+                <div class="user-actions">
+                    <button id="login-btn" class="btn btn--secondary" data-modal-target="#login-modal">Kirish</button>
+                    <button id="register-btn" class="btn btn--primary" data-modal-target="#register-modal">Roʻyxatdan oʻtish</button>
+                </div>
+                
+                <!-- Foydalanuvchi ma'lumotlari (kirgandan keyin) -->
+                <div class="user-info" style="display: none">
+                    <span id="user-display-email" class="user-text"></span>
+                    <button id="logout-btn" class="btn btn--secondary">Chiqish</button>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- ====================== MAIN CONTENT ====================== -->
+    <main>
+        <section class="container">
+            <!-- FILTR TUGMALARI -->
+            <div class="filter-container">
+                <div class="filter-options" id="filterOptions">
+                    <div class="filter-item active" data-filter="all">Barcha kitoblar</div>
+                    <div class="filter-item" data-filter="bolalar adabiyoti">Bolalar adabiyoti</div>
+                    <div class="filter-item" data-filter="tarixiy">Tarixiy</div>
+                    <div class="filter-item" data-filter="sevgi">Sevgi</div>
+                    <div class="filter-item" data-filter="fantastika">Fantastika</div>
+                    <div class="filter-item" data-filter="ilmiy">Ilmiy</div>
+                    <div class="filter-item" data-filter="iqtisod">Iqtisod</div>
+                </div>
+            </div>
+
+            <!-- YANGI: Katalog tugmasi uchun scroll nuqtasi (filtr ostidan boshlash uchun) -->
+            <div id="catalog-anchor"></div>
+
+            <!-- KITOBLAR RO‘YXATI -->
+            <div class="products" id="book-list"></div>
+        </section>
+    </main>
+
+    <!-- ====================== FOOTER ====================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- LOGO -->
+                <div class="footer-brand">
+                    <a href="javascript:void(0)" class="logo scroll-to-top">
+                        <img src="https://i.postimg.cc/9FR7nFyL/Copilot-20250821-185359.png" alt="logo" class="logo-dark" />
+                        <img src="https://i.postimg.cc/vZq5QFVD/image.png" alt="logo" class="logo-light" />
+                        Kitoblar
+                    </a>
+                    <p class="muted">Eng sara kitoblarni uyingizga yetkazib beramiz.</p>
+                </div>
+                
+                <!-- SAHIFALAR -->
+                <div class="footer-links">
+                    <h4>Sahifalar</h4>
+                    <ul class="list">
+                        <li><a href="javascript:void(0)" class="scroll-to-top">Bosh sahifa</a></li>
+                        <li><a href="javascript:void(0)" class="scroll-to-products">Katalog</a></li>
+                    </ul>
+                </div>
+                
+                <!-- IJTIMOIY TARMOQLAR – IKONKA BILAN -->
+                <div class="footer-socials">
+                    <h4>Bizni kuzating</h4>
+                    <ul class="list social-list">
+                        <li>
+                            <a href="https://t.me/book_store_by_behruz" target="_blank">
+                                <i class="fab fa-telegram"></i> Telegram
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/bookstore_chelak/" target="_blank">
+                                <i class="fab fa-instagram"></i> Instagram
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank">
+                                <i class="fab fa-facebook"></i> Facebook
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-divider"></div>
+                <p class="footer__note muted">© 2025 Kitoblar Do'koni. Barcha huquqlar himoyalangan.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ====================== MODALLAR ====================== -->
+    <!-- Kirish, Ro'yxatdan o'tish, Savat, Buyurtma, Ma'lumot -->
+    <div id="login-modal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>Tizimga kirish</h3>
+            <form id="login-form">
+                <input type="email" placeholder="Email" required />
+                <input type="password" placeholder="Parol" required />
+                <button type="submit" class="btn btn--primary">Kirish</button>
+                <p id="login-message" class="error-message"></p>
+            </form>
+        </div>
+    </div>
+
+    <div id="register-modal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>Ro'yxatdan o'tish</h3>
+            <form id="register-form">
+                <input type="text" placeholder="Ismingiz" required />
+                <input type="email" placeholder="Email" required />
+                <input type="password" placeholder="Parol" required />
+                <input type="password" placeholder="Parolni takrorlash" required />
+                <button type="submit" class="btn btn--primary">Ro'yxatdan o'tish</button>
+                <p id="register-message" class="error-message"></p>
+            </form>
+        </div>
+    </div>
+    
+    <div id="cart-modal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>Savat</h3>
+            <div class="cart-items-list" id="cart-items-list"></div>
+            <div class="cart-summary">Jami: <span id="cart-total-price">0 so'm</span></div>
+            <button id="order-all-btn" class="btn btn--primary" data-modal-target="#order-modal" style="display: none; margin-top: 15px">Buyurtma berish</button>
+        </div>
+    </div>
+
+    <div id="order-modal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>Buyurtmani rasmiylashtirish</h3>
+            <form id="order-form">
+                <div style="background: var(--panel-2); padding: 10px; border-radius: 8px; margin-bottom: 1rem;">
+                    <p id="order-book-info" class="muted" style="white-space: pre-wrap; font-size: 14px"></p>
+                </div>
+                <input type="text" name="name" placeholder="To'liq ismingiz va Familyangiz" required />
+                <input type="text" name="phone" id="order-phone" placeholder="Telefon raqami (+998YY YYY YY YY)" required value="+998" maxlength="13" autocomplete="off" />
+                <input type="text" name="address" placeholder="Manzil (ko'cha, uy raqami)" required />
+                <input type="text" name="passport" placeholder="Pasport seriyasi va raqami (Masalan: AA1234567)" required />
+                <input type="text" name="note" placeholder="Eslatma/Qo'shimcha ma'lumot (ixtiyoriy)" />
+                <button type="submit" class="btn btn--primary">Buyurtmani tasdiqlash</button>
+                <p id="order-message" class="error-message"></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- YANGI: Kitob haqida batafsil ma'lumot -->
+    <div id="book-detail-modal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="book-detail">
+                <img id="detail-image" src="" alt="" class="book-detail__img">
+                <div class="book-detail__info">
+                    <h3 id="detail-title"></h3>
+                    <p id="detail-author" class="muted"></p>
+                    <p id="detail-category" class="muted"></p>
+                    <p id="detail-price" class="book-detail__price"></p>
+                    <p id="detail-description" class="book-detail__desc"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST XABARLAR -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <!-- YUKLANISH ANIMATSIYASI -->
+    <div id="loader" class="loader-overlay" style="display: flex;">
+        <div class="loader"></div>
+    </div>
+</body>
+</html>

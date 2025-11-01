@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "title": "Sariq devni minib",
+        "author": "Xudoyberdi To‘xtaboyev",
+        "price": 65000,
+        "category": "bolalar adabiyoti",
+        "image": "https://assets.asaxiy.uz/product/items/desktop/90f24d5ea7a107829d4c4992e50b695f2021032416453053021UQyeXq0TY4.jpg.webp",
+        "description": "Bolalar uchun ajoyib sarguzashtli hikoya. Qahramon sariq devga minib, sehrli dunyoga sayohat qiladi."
+    },
+    {
+        "id": 2,
+        "title": "Iblis saltanati",
+        "author": "Javlon Jovliyev",
+        "price": 85000,
+        "category": "tarixiy",
+        "image": "https://images.uzum.uz/csljkor4nkdv7h9jjgq0/original.jpg",
+        "description": "Tarixiy roman, O‘zbekistonning o‘tmishidagi sirli voqealar haqida."
+    },
+    {
+        "id": 3,
+        "title": "Choliqushi",
+        "author": "Reshot Nuri Guntekin",
+        "price": 92000,
+        "category": "sevgi",
+        "image": "https://images.uzum.uz/cc6a4neha88ep89ki2hg/original.jpg",
+        "description": "Klassik sevgi hikoyasi, qiyin taqdir va sadoqat haqida."
+    },
+    {
+        "id": 4,
+        "title": "Jimlik",
+        "author": "Ibrohim G'afurov",
+        "price": 105000,
+        "category": "fantastika",
+        "image": "https://hilolnashr.uz/image/cache/catalog/001-Kitoblar/003_boshqalar/002_badiy/jimjitlik-lotin-3d-web-550x550h.jpg",
+        "description": "Fantastik dunyoda jimlik hukmron bo‘lgan sirli voqea."
+    },
+    {
+        "id": 5,
+        "title": "Bemor",
+        "author": "Asqad Muxtor",
+        "price": 68000,
+        "category": "ilmiy",
+        "image": "https://images.uzum.uz/cqj2lucsslomdvnih0j0/original.jpg",
+        "description": "Ilmiy tadqiqotlar asosida yozilgan tibbiy hikoya."
+    },
+    {
+        "id": 6,
+        "title": "Boy otaning kambag'al otasi",
+        "author": "Robert Kiyosaki",
+        "price": 120000,
+        "category": "iqtisod",
+        "image": "https://olcha.uz/image/700x700/products/supplier/stores/1/2023-07-20/QG95phuka6Zb0DjY13Ogf3896Iv0DtoQCQwrsFOtiYAJUyvt0I5tTiD5vFCm.jpg",
+        "description": "Moliyaviy erkinlikka erishish yo‘lida boy va kambag‘al otalarning farqi."
+    }
+]
